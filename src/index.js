@@ -41,18 +41,18 @@ function submitChallenge(formData, config) {
 }
 
 function decrypt(str, amount) {     
-	var output = ''
+    var output = ''
 
-	for (var i = 0; i < str.length; i ++) {
-		var c = str[i]
-		if (c.match(/[a-z]/i)) {
+    for (var i = 0; i < str.length; i ++) {
+        var c = str[i]
+        if (c.match(/[a-z]/i)) {
             var code = str.charCodeAt(i)
             c = String.fromCharCode(((code - 97 - amount) % 26) + 97)
-		}
-		output += c
+        }
+        output += c
     }
 
-	return output
+    return output
 }
 
 function saveFile(jsonData) {
